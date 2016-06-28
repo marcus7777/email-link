@@ -1,0 +1,13 @@
+{
+  "name": "email-link",
+  "version": "1.0.0",
+  "description": "email a link",
+  "main": "email-link.html",
+  "keywords": [
+    "polymer",
+    "web-components"
+  ],
+  "dependencies": {
+    "polymer": "*"
+  }
+}
