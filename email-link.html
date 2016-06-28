@@ -1,0 +1,17 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<!--
+`<email-link></email-link>` email a link
+@demo demo.html
+-->
+
+<dom-module id="email-link">
+  <template>
+    <a target="_blank" href="mailto:?subject={{subject}}&body=your link :{{link}}"><content></content></a>
+  </template>
+</dom-module>
+<script>
+Polymer({
+  is: "email-link",
+  properties: {}
+})
+</script>
