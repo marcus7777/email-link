@@ -6,17 +6,24 @@
 
 <dom-module id="email-link">
   <template>
-    <a target="_blank" href="mailto:?subject={{subject}}&body=your link :{{thelink}}"><content></content></a>
+    <template is="dom-if" if="{{showIt}}">
+      <a target="_blank" href="mailto:?subject={{subject}}&body=your link :{{thelink}}"><content></content></a>
+    </template>
   </template>
 </dom-module>
 <script>
 Polymer({
   is: "email-link",
   properties: {
-    theLink: {computed: "getThelink(link)"}
+    theLink: {computed: "getThelink(link)"},
+    maxSize:{value:30000},
+    showIt: {computed: "show(link.length, maxSize)"},
   },
   getThelink: function(link) {
     return encodeURI(link)
+  },
+  show: function(linkLength, maxSize) {
+    return linkLength < maxSize+1
   }
 })
 </script>
