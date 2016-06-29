@@ -6,12 +6,17 @@
 
 <dom-module id="email-link">
   <template>
-    <a target="_blank" href="mailto:?subject={{subject}}&body=your link :{{link}}"><content></content></a>
+    <a target="_blank" href="mailto:?subject={{subject}}&body=your link :{{thelink}}"><content></content></a>
   </template>
 </dom-module>
 <script>
 Polymer({
   is: "email-link",
-  properties: {}
+  properties: {
+    theLink: {computed: "getThelink(link)"}
+  },
+  getThelink: function(link) {
+    return encodeURI(link)
+  }
 })
 </script>
