@@ -20,7 +20,7 @@ Polymer({
     showIt: {computed: "show(link.length, maxSize)"},
   },
   getThelink: function(link) {
-    return encodeURI(link)
+    return encodeURIComponent(link)
   },
   show: function(linkLength, maxSize) {
     return linkLength < maxSize+1
